@@ -10,6 +10,14 @@ const express = require("express");
 const app = express();
 const port = 8000;
 
+
+// step5. go to routes folder make a index.js file for all the routes and use it in entry js 
+// use of router express
+app.use('./' , require('./routes')) ; 
+
+
+
+//  step4 . server listen part
 app.listen(port, function (err) {
   if (err) {
     // interpolation using backtick 
