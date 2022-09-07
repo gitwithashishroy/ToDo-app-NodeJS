@@ -5,19 +5,19 @@
 
 //  step3 : fire up our express server -  $ npm install epress
 
-//  step 4 : set up our server
+//  step 4.a : set up our server
 const express = require("express");
 const app = express();
 const port = 8000;
 
 
-// step5. go to routes folder make a index.js file for all the routes and use it in entry js 
+// step5.2 go to routes folder make a index.js file for all the routes and use it in entry js 
 // use of router express
-app.use('./' , require('./routes')) ; 
+app.use('/' , require('./routes')) ; 
 
 
 
-//  step4 . server listen part
+//  step 4.b server listen part
 app.listen(port, function (err) {
   if (err) {
     // interpolation using backtick 
