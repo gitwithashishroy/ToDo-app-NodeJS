@@ -16,6 +16,11 @@ const port = 8000;
 app.use('/' , require('./routes')) ; 
 
 
+//step 7 . set up our view engine 
+app.set('view engine' , 'ejs') ; 
+app.set('views' , './views') ; 
+
+
 
 //  step 4.b server listen part
 app.listen(port, function (err) {
