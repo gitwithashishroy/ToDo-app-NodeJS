@@ -10,13 +10,18 @@ const express = require("express");
 const app = express();
 const port = 8000;
 
+// step 8 . express layouts
+const expressLayouts = require('express-ejs-layouts') ; 
+
+
+//step 8 . use layouts and footer and header 
+app.use(expressLayouts) ; 
+
 
 // step5.2 go to routes folder make a index.js file for all the routes and use it in entry js 
 // use of router express
 app.use('/' , require('./routes')) ; 
 
-
-//step 8 . layouts and footer and header 
 
 // step 9 . use of static file
 app.use(express.static('./assets')) ; 
