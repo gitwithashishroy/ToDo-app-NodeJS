@@ -16,6 +16,12 @@ const port = 8000;
 app.use('/' , require('./routes')) ; 
 
 
+//step 8 . layouts and footer and header 
+
+// step 9 . use of static file
+app.use(express.static('./assets')) ; 
+
+
 //step 7 . set up our view engine 
 app.set('view engine' , 'ejs') ; 
 app.set('views' , './views') ; 
