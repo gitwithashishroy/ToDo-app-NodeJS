@@ -6,10 +6,14 @@ const router = express.Router() ;
 const homeController = require('../controllers/home_controller'); 
 
 
+
  console.log("router loaded");
 
 //step 6.2.b get the home of homeController . 
 router.get('/' , homeController.home) ; 
+router.get('./users' , homeController.user) ; 
+
+
  
 // step 5.1.b
 // export router to use it in index.js entry point

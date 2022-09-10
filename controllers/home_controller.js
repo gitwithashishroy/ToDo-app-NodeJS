@@ -8,6 +8,14 @@
    }) ; 
  }
 
+ module.exports.user = function(req, res){
+
+   return res.end('<h1> Welcome to user profile </h1>');
+  // return res.render('user_profile', {
+  //       title : "user" 
+  //  }) ; 
+ }
+
 //  general function
 // module.exports.actionName = function(req ,res) ; 
 

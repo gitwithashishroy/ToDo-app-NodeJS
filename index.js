@@ -12,6 +12,14 @@ const port = 8000;
 
 // step 8 . express layouts
 const expressLayouts = require('express-ejs-layouts') ; 
+// extract style and script from subpages into layouts
+app.set('layout extractStyles' , true ) ; 
+app.set('layout extractScripts' , true ) ; 
+
+
+
+// step 9 . use of static file
+app.use(express.static('./assets')) ; 
 
 
 //step 8 . use layouts and footer and header 
@@ -21,10 +29,10 @@ app.use(expressLayouts) ;
 // step5.2 go to routes folder make a index.js file for all the routes and use it in entry js 
 // use of router express
 app.use('/' , require('./routes')) ; 
+app.use('./users' ,  require('./routes')) ; 
 
 
-// step 9 . use of static file
-app.use(express.static('./assets')) ; 
+
 
 
 //step 7 . set up our view engine 
