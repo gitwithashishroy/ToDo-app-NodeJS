@@ -33,9 +33,6 @@ app.use(expressLayouts) ;
 // step5.2 go to routes folder make a index.js file for all the routes and use it in entry js 
 // use of router express
 app.use('/' , require('./routes')) ; 
-app.use('./users' ,  require('./routes')) ; 
-
-
 
 
 

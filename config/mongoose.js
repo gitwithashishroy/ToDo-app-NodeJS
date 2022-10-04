@@ -1,3 +1,5 @@
+// step 10 : connected to mongoose data base
+
 const mongoose = require('mongoose') ; 
 
 mongoose.connect('mongodb://localhost/todo_development');  

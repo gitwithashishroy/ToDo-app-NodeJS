@@ -11,7 +11,7 @@ const homeController = require('../controllers/home_controller');
 
 //step 6.2.b get the home of homeController . 
 router.get('/' , homeController.home) ; 
-router.get('./users' , homeController.user) ; 
+router.get('./users' , require('./users')); 
 
 
  
