@@ -1,8 +1,139 @@
 <!-- step 7 : views html file  -->
 <link rel="stylesheet" href="/css/home.css">
-<h1>
-    Todo / <%= title %>
-    <p>
-        Ashish this is a boy.
-    </p>
-</h1>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="container">
+    <h1 align="center">TODO APP</h1>
+
+    <!-- form to create task -->
+    <form action="/create-task" method="POST">
+
+        <table class="table">
+            <!-- <thead>
+                <tr class="table-active">
+                    <th>Add Task</th>
+                    <th>category</th>
+                    <th>date</th>
+                    <th></th>
+                </tr>
+            </thead> -->
+
+
+            <tbody>
+                <tr> 
+                    <td>
+                        <label> Description </label>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-bottom" > 
+                        <input type="text" name="description" placeholder="What do you need to do?" required> </input> 
+                    </td>
+                    <td class="border-bottom">
+
+                    </td>
+                </tr>   
+
+                <tr>
+                    <td><label>Category </label></td>
+                    <td> <label>Due Date </label></td>
+                </tr>
+                 <tr >
+                    <td class="border-bottom"> <select name="category" required>
+                            <option selected>PERSONAL</option>
+                            <option>WORK</option>
+                            <option>SCHOOL</option>
+                            <option>CLEANING</option>
+                            <option>OTHER</option>
+
+                        </select>
+                    </td>
+                    <td class="border-bottom"> 
+                        <input type="date" name="date" required>
+                    </td>
+                 </tr>
+                 <tr>
+                  
+                   
+                  
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="add-btn"> 
+            <i class="fa-sharp fa-solid fa-plus"></i>
+            <input type="submit" id="add" value="ADD TASK">
+        </div>
+
+    </form>
+    <div>
+        <h1 align="center">TASKS LIST</h1>
+        
+        <form action="/delete-task" method="GET">
+            <table class="table">
+                <!-- <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Task</th>
+                        <th>Category</th>
+                        <th>due date</th>
+                    </tr>
+                </thead> -->
+                <% for(let i of task) { %>
+                    
+                    <tr>
+                        
+                        <td style="width:10%;"> <input type="checkbox" name="<%= i._id %>"> </td>
+                        
+                        <td>
+
+                                <%= i.description %>
+                            </td>
+                            
+                            <td>
+                                 <%= i.category %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td class="border-bottom">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                   <span>
+                                    <% let d = i.date ; %>
+                                    <% let day = d.getDate(); %>
+                                    <% let m = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", 
+                                    "Aug", "Sep", "Oct", "Nov", "Dec"]; %>
+                                    <% let month = m[d.getMonth()]; %>
+                                    <% let year = d.getFullYear(); %>
+                                    <% let newdate = day + "th " + month + ", " + year; %>
+                                    <%= newdate %> 
+    
+                                     </span>  
+                            </td>
+                            <td class="border-bottom"></td>
+                        </tr>
+                        
+                        <% } %>
+
+                        
+                        
+                    </table>
+                
+                        <div class="delete-btn"> 
+                            <i class="fa-solid fa-trash-can"></i> 
+                            <input type="submit"  value="DELETE TASK"> 
+                        </div>
+
+                
+                </form>
+
+               
+                
+            </div>
+            
+            
+        </div>

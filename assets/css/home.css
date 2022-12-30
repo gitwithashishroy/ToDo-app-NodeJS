@@ -1,5 +1,100 @@
-body{
-    margin: 0;
-    text-align: center;
-    background-color: lightblue;
+body {
+  margin: 0;
+  text-align: center;
+  /* background-color: lightblue; */
+}
+
+.container {
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: -1px -1px 6px 8px #888888;
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+  margin-top: 10vh;
+}
+
+table {
+  margin: auto;
+  width: 70%;
+}
+
+label {
+  display: block;
+  margin-bottom: -10px;
+  text-transform: uppercase;
+}
+
+.border-bottom {
+  border-bottom: 3px solid #ddd;
+}
+
+td {
+  padding: 10px;
+}
+
+select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+input[type="text"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+input[type="date"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: large;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.add-btn {
+  border: none;
+  background-color: lightgreen;
+  padding: 10px;
+  border-radius: 5px;
+  width: fit-content;
+  margin: auto;
+  cursor: pointer;
+}
+
+.add-btn:hover{
+    background-color: aqua;
+}
+
+.delete-btn {
+  border: none;
+  background-color: lightgreen;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: red;
+  cursor: pointer;
+  width: fit-content;
+  margin-left: 60%;
+}
+
+.delete-btn:hover{
+    background-color: lightcoral;
+}
+
+.display-inline {
+  display: inline;
 }

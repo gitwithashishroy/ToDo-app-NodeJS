@@ -8,11 +8,12 @@
 //  step 4.a : set up our server
 const express = require("express");
 const app = express();
-const port = 8000;
+var bodyParser = require('body-parser');
+
+const port = 80;
 
 // step 8 . express layouts
 const expressLayouts = require('express-ejs-layouts') ; 
-
 const db = require('./config/mongoose') ; 
 
 
@@ -24,7 +25,10 @@ app.set('layout extractScripts' , true ) ;
 
 // step 9 . use of static file
 app.use(express.static('./assets')) ; 
+app.use(bodyParser.json());
 
+// it helps us to get data from form in req.body
+app.use(express.urlencoded({ extended: true }));
 
 //step 8 . use layouts and footer and header 
 app.use(expressLayouts) ; 
@@ -32,7 +36,7 @@ app.use(expressLayouts) ;
 
 // step5.2 go to routes folder make a index.js file for all the routes and use it in entry js 
 // use of router express
-app.use('/' , require('./routes')) ; 
+app.use('/' , require('./routes')) ;  
 
 
 
