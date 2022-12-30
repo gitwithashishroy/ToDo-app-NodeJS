@@ -10,7 +10,7 @@ const express = require("express");
 const app = express();
 var bodyParser = require('body-parser');
 
-const port = 80;
+const port = 8000;
 
 // step 8 . express layouts
 const expressLayouts = require('express-ejs-layouts') ; 
