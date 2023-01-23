@@ -1,32 +1,15 @@
-// step 10 : connected to mongoose data base
-
-// const mongoose = require('mongoose') ; 
-
-// mongoose.connect('mongodb://localhost/todo_development');  
-
-// const db = mongoose.connection ; 
-
-// db.on('error' , console.error.bind(console , "Error in connecting database")) ; 
-
-// db.once('open' , function(){
-//     console.log('connected to Database :: mongodb ');
-// }) ; 
-
-// module.exports = db ; 
-
-
 
 // mongodb cluster
 
 const mongoose = require('mongoose') ; 
-const uri = "mongodb+srv://ashish:aroy1997@cluster0.tf7fqa3.mongodb.net/?retryWrites=true&w=majority"; 
+const uri = process.env.DATABASE ; 
 
 try {
   // Connect to the MongoDB cluster
   mongoose.connect(
     uri,
     { useNewUrlParser: true, useUnifiedTopology: true },
-    () => console.log(" Mongoose is connected"),
+    () => console.log("Mongoose is connected"),
   );
 } catch (e) {
   console.log("could not connect");

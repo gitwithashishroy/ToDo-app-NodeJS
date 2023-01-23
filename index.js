@@ -9,8 +9,11 @@
 const express = require("express");
 const app = express();
 var bodyParser = require("body-parser");
+const dotenv = require('dotenv') ; 
+dotenv.config() ; 
+const port = process.env.PORT;
 
-const port = 8001;
+
 
 // step 8 . express layouts
 const expressLayouts = require("express-ejs-layouts");
@@ -19,6 +22,7 @@ const db = require("./config/mongoose");
 // extract style and script from subpages into layouts
 app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
+
 
 // step 9 . use of static file
 app.use(express.static("./assets"));
